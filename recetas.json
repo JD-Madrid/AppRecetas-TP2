@@ -1,3 +1,44 @@
-{
-    
-}
+[
+  {
+    "id": 1,
+    "titulo": "Tarta de Jamon y Queso",
+    "ingredientes": "Jamon, Queso, Cebolla, Huevo",
+    "instrucciones": "Hacer la cebolla y luego agregarle el jamon, queso y huevo",
+    "tiempo": "30"
+  },
+  {
+    "id": 2,
+    "titulo": "Pastel de papa",
+    "ingredientes": "Papas, carne picada, cebolla, morron, queso",
+    "instrucciones": "Hacer el relleno y luego el pure, juntar todo en una fuente",
+    "tiempo": "60"
+  },
+  {
+    "id": 3,
+    "titulo": "Milanesas de carne",
+    "ingredientes": "Ajo, perejil, huevo, pan rallado, carne",
+    "instrucciones": "Hacer la mezcla, luego pasar la carne por la mezcla y empanar en pan rallado",
+    "tiempo": "40"
+  },
+  {
+    "id": 4,
+    "titulo": "Salsa Fileto",
+    "ingredientes": "Ajo, perejil, albahaca, tomate triturado, cebolla",
+    "instrucciones": "Hacer la cebolla en aceite de oliva, luego agregar hiervas, luego el tomate y condimentar",
+    "tiempo": "25"
+  },
+  {
+    "id": 5,
+    "titulo": "Empanadas de carne",
+    "ingredientes": "Carne picada, cebolla, morron, aceitunas, verdeo, huevo",
+    "instrucciones": "Hacer el relleno y luego hacer las empanadas con el repulgue",
+    "tiempo": "70"
+  },
+  {
+    "id": 6,
+    "titulo": "Sopa de verdura",
+    "ingredientes": "Verduras a eleccion, fideos cabello de angel, condimentos",
+    "instrucciones": "Realizar el caldo y luego agregar los fideos",
+    "tiempo": "50"
+  }
+]

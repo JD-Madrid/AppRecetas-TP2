@@ -1,4 +1,4 @@
-import { express } from "express"
+import  express from "express"
 import RouterRecetas from "./router/recetas.js"
 
 
@@ -13,11 +13,11 @@ class Server {
 
     start() {
         const app = express()
-        app.use(express.json)
-        app.use(urlencoded({ extended: true }))
+        app.use(express.json())
+        app.use(express.urlencoded({ extended: true }))
         app.use(express.static(`public`))
         app.use("/api/recetas", this.#routerRecetas)
-        app.listen(this.#port, () => { console.log(`Servidor express escuchando en http://localhost${this.#port}`) })
+        app.listen(this.#port, () => { console.log(`Servidor express escuchando en http://localhost:${this.#port}`) })
     }
 }
 
