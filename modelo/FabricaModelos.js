@@ -1,11 +1,12 @@
-import RecetaFile from "./recetas.ja"
+import Recetas from "./recetas.js"
 
-Class FabricaModelos{
+
+class FabricaModelos{
 
     static get(tipo) {
         switch (tipo) {
-            case "MEM":
-                console.log("Modelo en memoria con FS activado")
+            case "FILE":
+                console.log("Modelo en Memoria con FS activado")
                 return new Recetas()
                 break
             case "MongoDB": 
@@ -15,8 +16,6 @@ Class FabricaModelos{
                 console.log("Modelo de memoria con FS activado")
         }
     }
-
-
 }
 
 export default FabricaModelos

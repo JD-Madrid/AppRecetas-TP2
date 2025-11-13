@@ -11,15 +11,13 @@ class RouterRecetas {
 
     config() {
         const router = Router()
-        router.get("/", (req, res) => { this.#controlador.obtenerTodas(req, res) })
-        router.get("/:id", (req, res) => { this.#controlador.obtenerPorId(req, res) })
-        router.post("/", (req, res) => { this.#controlador.agregarReceta(req, res) })
-        router.put("/:id", (req, res) => { this.#controlador.editarReceta(req, res) })
-        router.delete("/:id", (req, res) => { this.#controlador.eliminarReceta(req, res) })
+        router.get("/", this.#controlador.obtenerTodas)
+        router.get("/:id", this.#controlador.obtenerPorId)
+        router.post("/", this.#controlador.agregarReceta)
+        router.put("/:id",this.#controlador.editarReceta)
+        router.delete("/:id", this.#controlador.eliminarReceta)
         return router
     }
-
-
 }
 
 

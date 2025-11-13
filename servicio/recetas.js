@@ -1,10 +1,12 @@
 import Modelo from '../modelo/recetas.js' 
+import FabricaModelos from '../modelo/FabricaModelos.js'
+import Config from "../config.js"
 
 class Servicio {
     #modelo = null
 
     constructor() {
-        this.#modelo = new Modelo()
+        this.#modelo = FabricaModelos.get(Config.PERSISTENCIA)
     }
 
         async obtenerTodas() {
