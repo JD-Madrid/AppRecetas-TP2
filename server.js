@@ -15,7 +15,7 @@ class Server {
         //****API EXPRESS****/
         const app = express()
 
-        //****MIDDLEWARE****/
+        //****MIDDLEWARE DE CONFIGURACIÓN****/
         app.use(express.json())
         app.use(express.urlencoded({ extended: true }))
         app.use(express.static(`public`))

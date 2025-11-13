@@ -40,5 +40,12 @@
     "ingredientes": "Verduras a eleccion, fideos cabello de angel, condimentos",
     "instrucciones": "Realizar el caldo y luego agregar los fideos",
     "tiempo": "50"
+  },
+  {
+    "id": 7,
+    "titulo": "Tarta de pollo con jamon y queso",
+    "ingredientes": "Tapas de harina, jamon ocino o natural, queso muzzarela o cremoso",
+    "instrucciones": "Cocinamos el pollo, volcar sobre las tapas de tarta junto con jamon y queso cortado en pedazos y repulgar, al horno y listo",
+    "tiempo": "20"
   }
 ]
