@@ -42,8 +42,8 @@ class Controlador {
 
     agregarReceta = async (req, res) => {
         try {
-            const nuevaReceta = await this.#servicio.agregarReceta(req.body)
             //***Podriamos validar que no este vacío el obj recibido en el cuerpo de de la petición (req.body) */
+            const nuevaReceta = await this.#servicio.agregarReceta(req.body)
             res.json(nuevaReceta)
         } catch (error) {
             res.status(500).json({ error: error.message })

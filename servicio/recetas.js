@@ -1,4 +1,4 @@
-import Modelo from '../modelo/recetas.js' 
+// import Modelo from '../modelo/recetas.js' 
 import FabricaModelos from '../modelo/FabricaModelos.js'
 import Config from "../config.js"
 
