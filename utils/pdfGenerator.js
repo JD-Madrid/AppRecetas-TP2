@@ -20,7 +20,7 @@ export function generarPdfReceta(receta, ws) {
     doc.moveDown();
 
     //Instruciones
-    doc.fontSize(14).text("Intrucciones:", { underline: true })
+    doc.fontSize(14).text("Instrucciones:", { underline: true })
     doc.fontSize(12).text(receta.instrucciones)
     doc.moveDown()
 
@@ -30,7 +30,7 @@ export function generarPdfReceta(receta, ws) {
     doc.moveDown(2)
 
     //Pie
-    doc.fontSize(10).text(`ID de la receta: ${receta.id}`, { align: "right"})
+    doc.fontSize(10).text(`ID de la receta: ${receta.id}`, { align: "right" })
 
     //Finalizar PDF
     doc.end();
