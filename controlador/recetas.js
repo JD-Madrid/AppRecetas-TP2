@@ -45,6 +45,26 @@ class Controlador {
         }
     }
 
+    descargarPdf = async (req, res) => {
+        try {
+            const { id } = req.params
+            const receta = await this.#servicio.obtenerRecetaParaPdf(id)
+            if (!receta) {
+                return res.status(404).json({ error: `Receta no encontrada` })
+            }
+
+            res.setHeader("Content-Type", "application/pdf")
+            res.setHeader("Content-Disposition", `attachment; filename=receta_${id}.pdf`)
+
+            //Generar PDF directo al response 
+            generarPdfReceta(receta, res)
+
+        } catch (err) {
+            console.error("Error al generar PDF: ", err)
+            res.status(500).json({ error: err.message })
+        }
+    }
+
     agregarReceta = async (req, res) => {
         try {
             const receta = req.body
@@ -75,7 +95,7 @@ class Controlador {
             const id = parseInt(req.params.id)
             const recetaEliminada = await this.#servicio.eliminarReceta(id)
             if (!recetaEliminada) return res.status(404).json({ error: 'No se encontró la receta' })
-            res.json({ mensaje: 'Receta eliminada correctamente', recetaEliminada: recetaEliminada})
+            res.json({ mensaje: 'Receta eliminada correctamente', recetaEliminada: recetaEliminada })
             //Se retorna un msj o el objeto eliminado ? 
         } catch (error) {
             res.status(500).json({ error: error.message })
