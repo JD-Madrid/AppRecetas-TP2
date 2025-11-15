@@ -18,6 +18,8 @@ class RouterRecetas {
         router.post("/", this.#controlador.agregarReceta)
         router.put("/:id", this.#controlador.editarReceta)
         router.delete("/:id", this.#controlador.eliminarReceta)
+      
+        router.get("/:id/pdf", this.#controlador.descargarPdf)
         return router
     }
 }
