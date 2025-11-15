@@ -1,12 +1,11 @@
+import {Router} from "express"
 import ControladorCliente from "../controlador/clientes.js"
-import Router from "express"
 
 class RouterClientes {
 
     //Variables
     #controlador = null
 
-     //Constructor
     constructor(){
         this.#controlador = new ControladorCliente()
     }

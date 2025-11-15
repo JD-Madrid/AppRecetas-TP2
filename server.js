@@ -1,8 +1,9 @@
-import  express from "express"
+import express from "express"
 import RouterRecetas from "./router/recetas.js"
 import RouterClientes from "./router/clientes.js"
 
 class Server {
+    //Variables
     #port = null
     #routerRecetas = null
     #routerClientes = null
@@ -10,11 +11,11 @@ class Server {
     constructor(port) {
         this.#port = port
         this.#routerRecetas = new RouterRecetas().config()
-        this.#routerClientes = new RouterClientes().config()    
+        this.#routerClientes = new RouterClientes().config()
     }
 
     start() {
-        //****API EXPRESS****/
+        //****Inicialización de Express****
         const app = express()
 
         //****MIDDLEWARE DE CONFIGURACIÓN****/
@@ -22,13 +23,19 @@ class Server {
         app.use(express.urlencoded({ extended: true }))
         app.use(express.static(`public`))
 
-        /****API RESTful: Recetas****/
+        /****RUTAS DE LA API RESTfull: Recetas y Clientes****/
         app.use("/api/recetas", this.#routerRecetas)
-        /****API RESTful: Clientes****/
         app.use("/api/clientes", this.#routerClientes)
 
         /****INICIALIZACION DEL SERVIDOR EXPRESS*****/
-        app.listen(this.#port, () => { console.log(`Servidor express escuchando en http://localhost:${this.#port}`) })
+        const server = app.listen(this.#port, () => {
+            console.log(`Servidor express escuchando en http://localhost:${this.#port}`)
+        })
+
+        //Manejo de errores durante la puesta en marcha
+        server.on("error", (error) => {
+            console.error("❌ Error en el servidor:", error)
+        })
     }
 }
 

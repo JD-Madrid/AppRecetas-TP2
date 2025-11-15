@@ -1,62 +1,62 @@
 [
-    {
-        "id": 1,
-        "nombre": "Pedro",
-        "apellido": "Martinez",
-        "mail": "pedro@gmail.com"
-    },
-    {
-        "id": 2,
-        "nombre": "Lucia",
-        "apellido": "Gomez",
-        "mail": "lucia.gomez@gmail.com"
-    },
-    {
-        "id": 3,
-        "nombre": "Juan",
-        "apellido": "Fernandez",
-        "mail": "juan.fer@gmail.com"
-    },
-    {
-        "id": 4,
-        "nombre": "Mariana",
-        "apellido": "Suarez",
-        "mail": "mariana.suarez@gmail.com"
-    },
-    {
-        "id": 5,
-        "nombre": "Carlos",
-        "apellido": "Ramirez",
-        "mail": "carlos.ramirez@gmail.com"
-    },
-    {
-        "id": 6,
-        "nombre": "Ana",
-        "apellido": "López",
-        "mail": "ana.lopez@gmail.com"
-    },
-    {
-        "id": 7,
-        "nombre": "Sofia",
-        "apellido": "Pereyra",
-        "mail": "sofia.pereyra@gmail.com"
-    },
-    {
-        "id": 8,
-        "nombre": "Diego",
-        "apellido": "Sanchez",
-        "mail": "diego.sanchez@gmail.com"
-    },
-    {
-        "id": 9,
-        "nombre": "Valentina",
-        "apellido": "Ortiz",
-        "mail": "valentina.ortiz@gmail.com"
-    },
-    {
-        "id": 10,
-        "nombre": "Matias",
-        "apellido": "Benitez",
-        "mail": "matias.benitez@gmail.com"
-    }
+  {
+    "id": 1,
+    "nombre": "Pedro",
+    "apellido": "Martinez",
+    "mail": "pedro@gmail.com"
+  },
+  {
+    "id": 2,
+    "nombre": "Lucia",
+    "apellido": "Gomez",
+    "mail": "lucia.gomez@gmail.com"
+  },
+  {
+    "id": 3,
+    "nombre": "Juan",
+    "apellido": "Fernandez",
+    "mail": "juan.fer@gmail.com"
+  },
+  {
+    "id": 4,
+    "nombre": "Mariana",
+    "apellido": "Suarez",
+    "mail": "mariana.suarez@gmail.com"
+  },
+  {
+    "id": 5,
+    "nombre": "Carlos",
+    "apellido": "Ramirez",
+    "mail": "carlos.ramirez@gmail.com"
+  },
+  {
+    "id": 6,
+    "nombre": "Ana",
+    "apellido": "López",
+    "mail": "ana.lopez@gmail.com"
+  },
+  {
+    "id": 7,
+    "nombre": "Sofia",
+    "apellido": "Pereyra",
+    "mail": "sofia.pereyra@gmail.com"
+  },
+  {
+    "id": 8,
+    "nombre": "Diego",
+    "apellido": "Sanchez",
+    "mail": "diego.sanchez@gmail.com"
+  },
+  {
+    "id": 9,
+    "nombre": "Valentina",
+    "apellido": "Ortiz",
+    "mail": "valentina.ortiz@gmail.com"
+  },
+  {
+    "id": 10,
+    "nombre": "Matias",
+    "apellido": "Benitez",
+    "mail": "matias.benitez@gmail.com"
+  }
 ]

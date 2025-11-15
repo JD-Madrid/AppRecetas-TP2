@@ -1,9 +1,4 @@
 import ServicioClientes from "../servicio/clientes.js"
-import fs from "node:fs/promises"
-
-//**
-// CONSIDERAR VALIDACIONES MAS ESPECIFICAS EN TODAS LOS METODOS 
-//*/
 
 class Controlador {
 
@@ -40,17 +35,20 @@ class Controlador {
     agregarCliente = async (req, res) => {
         try {
             const cliente = req.body
-            const nuevoCliente = await this.#servicio.agregarCliente(cliente)
-            res.json(nuevoCliente)
+            //Object.key: validamos que el objeto no este vacío
+            if (!Object.keys(cliente).length) throw new Error("El objeto cliente esta vacío")
+            const clienteGuardado = await this.#servicio.agregarCliente(cliente)
+            res.json(clienteGuardado)
         } catch (error) {
-            res.status(404).json({ error: `${error.message}` })
+            res.status(404).json({ error: error.message })
         }
     }
 
     editarCliente = async (req, res) => {
         try {
             const { id } = req.params
-            const cliente = await this.#servicio.editarCliente(id)
+            const data = req.body
+            const cliente = await this.#servicio.editarCliente(id, data)
             res.json(cliente)
         } catch (error) {
             res.status(404).json({ error: `${error.message}` })
@@ -60,9 +58,9 @@ class Controlador {
     eliminarCliente = async (req, res) => {
         try {
             const { id } = req.params
-            const cliente = await this.#servicio.eliminarCliente(id)
-            if (!cliente) return res.status(404).json({ error: `ID inexistente` })
-            res.json({ mensaje: `El cliente con el id ${id} ha sido eliminado exitosamente` })
+            const clienteEliminado = await this.#servicio.eliminarCliente(id)
+            if (!clienteEliminado) return res.status(404).json({ error: `ID inexistente` })
+            res.json({ mensaje: `El cliente con el id ${id} ha sido eliminado exitosamente`, clienteEliminado: clienteEliminado })
         } catch (error) {
             res.status(404).json({ error: `${error.message}` })
         }

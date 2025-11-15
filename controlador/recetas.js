@@ -1,5 +1,9 @@
 import Servicio from '../servicio/recetas.js'
 
+//**
+//*********VALIDACIONES DEL CONTROLADOR******* */
+//Las validaciones del controlador son genericas, por ejemplo que el dato recibido no sea vacia
+// */
 
 class Controlador {
     #servicio = null
@@ -21,30 +25,32 @@ class Controlador {
     // }
     // */
 
-    obtenerTodas = async (req,res) => {
-        try{
-            const productos = await this.#servicio.obtenerTodas()
-            res.json(productos) 
-        }catch(error) {
-            res.status(500).json({error:` Al querer leer todas las recetas ${error.message}` })
+    obtenerTodas = async (req, res) => {
+        try {
+            const recetas = await this.#servicio.obtenerTodas()
+            res.json(recetas)
+        } catch (error) {
+            res.status(500).json({ error: ` Al querer leer todas las recetas ${error.message}` })
         }
     }
 
-    obtenerPorId = async (req,res) => {
-        try{
+    obtenerPorId = async (req, res) => {
+        try {
             const { id } = req.params
-            const producto = await this.#servicio.obtenerPorId(id)
-            res.json(producto)
-        }catch(error) {
+            const recetas = await this.#servicio.obtenerPorId(id)
+            res.json(recetas)
+        } catch (error) {
             res.status(404).send(error.message)
         }
     }
 
     agregarReceta = async (req, res) => {
         try {
-            //***Podriamos validar que no este vacío el obj recibido en el cuerpo de de la petición (req.body) */
-            const nuevaReceta = await this.#servicio.agregarReceta(req.body)
-            res.json(nuevaReceta)
+            const receta = req.body
+            //Object.key: validamos que el objeto no este vacío
+            if (!Object.keys(receta).length) throw new Error("El objeto receta esta vacío")
+            const recetaGuardada = await this.#servicio.agregarReceta(receta)
+            res.json(recetaGuardada)
         } catch (error) {
             res.status(500).json({ error: error.message })
         }
@@ -54,7 +60,8 @@ class Controlador {
     editarReceta = async (req, res) => {
         try {
             const id = parseInt(req.params.id)
-            const recetaActualizada = await this.#servicio.editarReceta(id, req.body)
+            const data = req.body
+            const recetaActualizada = await this.#servicio.editarReceta(id, data)
             if (!recetaActualizada) return res.status(404).json({ error: 'No se encontró la receta' })
             res.json(recetaActualizada)
         } catch (error) {
@@ -67,7 +74,7 @@ class Controlador {
             const id = parseInt(req.params.id)
             const recetaEliminada = await this.#servicio.eliminarReceta(id)
             if (!recetaEliminada) return res.status(404).json({ error: 'No se encontró la receta' })
-            res.json({ mensaje: 'Receta eliminada correctamente' })
+            res.json({ mensaje: 'Receta eliminada correctamente', recetaEliminada: recetaEliminada})
             //Se retorna un msj o el objeto eliminado ? 
         } catch (error) {
             res.status(500).json({ error: error.message })

@@ -28,7 +28,6 @@ class ModeloRecetas {
     await fs.writeFile(this.#ruta, JSON.stringify(recetas, null, 2))
   }
 
-
   //********CRUD*********/
   async obtenerTodas() {
     return await this.#leerArchivo()
