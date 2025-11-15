@@ -1,31 +1,42 @@
-import Modelo from '../modelo/recetas.js' 
+import FabricaModelos from '../modelo/FabricaModelos.js'
+import Config from "../config.js"
 
-class Servicio {
+//Validaciones con Joi
+import { validar } from './validaciones/recetas.js'
+
+class ServicioReceta {
+    //Variables
     #modelo = null
 
     constructor() {
-        this.#modelo = new Modelo()
+        this.#modelo = FabricaModelos.get(Config.PERSISTENCIA, "recetas")
     }
 
-        async obtenerTodas() {
-            return await this.#modelo.obtenerTodas()
-        }
+    async obtenerTodas() {
+        return await this.#modelo.obtenerTodas()
+    }
 
-        async obtenerPorId(id) {
-            return await this.#modelo.obtenerPorId(id)
-        }
+    async obtenerPorId(id) {
+        return await this.#modelo.obtenerPorId(id)
+    }
 
-        async agregarReceta(receta) {
-            return await this.#modelo.agregarReceta(receta)
+    async agregarReceta(receta) {
+        const res = validar(receta)
+        if (res.result) {
+            const recetaGuardada = await this.#modelo.agregarReceta(receta)
+            return recetaGuardada
+        }else{
+            throw new Error(res.error.details[0].message)         
         }
+    }
 
-        async editarReceta(id,data) {
-            return await this.#modelo.editarReceta(id,data)
-        }
+    async editarReceta(id, data) {
+        return await this.#modelo.editarReceta(id, data)
+    }
 
-        async eliminarReceta(id) {
-            return await this.#modelo.eliminarReceta(id)
-        }
+    async eliminarReceta(id) {
+        return await this.#modelo.eliminarReceta(id)
+    }
 }
 
-export default Servicio;
+export default ServicioReceta;

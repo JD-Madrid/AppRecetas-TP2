@@ -1,5 +1,8 @@
+import config from "./config.js"
 import Server from "./server.js"
 
-const server = new Server(8080)
+const PORT = config.PORT
+
+const server = new Server(PORT)
 
 server.start()
