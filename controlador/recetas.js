@@ -1,5 +1,5 @@
 import Servicio from '../servicio/recetas.js'
-
+import { generarPdfReceta } from '../utils/pdfGenerator.js'
 //**
 //*********VALIDACIONES DEL CONTROLADOR******* */
 //Las validaciones del controlador son genericas, por ejemplo que el dato recibido no sea vacia
@@ -41,6 +41,26 @@ class Controlador {
             res.json(recetas)
         } catch (error) {
             res.status(404).send(error.message)
+        }
+    }
+
+    descargarPdf = async (req,res) => {
+        try {
+            const { id } = req.params
+            const receta = await this.#servicio.obtenerRecetaParaPdf(id)
+            if(!receta){
+                return res.status(404).json({error: `Receta no encontrada`})
+            }
+
+            res.setHeader("Content-Type", "application/pdf")
+            res.setHeader("Content-Disposition", `attachment; filename=receta_${id}.pdf`)
+
+            //Generar PDF directo al response 
+            generarPdfReceta(receta,res)
+
+        } catch (err) {
+            console.error("Error al generar PDF: ", err)
+            res.status(500).json({ error: err.message})
         }
     }
 
