@@ -26,7 +26,6 @@ class Server {
         /****RUTAS DE LA API RESTfull: Recetas y Clientes****/
         app.use("/api/recetas", this.#routerRecetas)
         app.use("/api/clientes", this.#routerClientes)
-        
 
         /****INICIALIZACION DEL SERVIDOR EXPRESS*****/
         const server = app.listen(this.#port, () => {
