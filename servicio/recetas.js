@@ -20,19 +20,13 @@ class ServicioReceta {
         return await this.#modelo.obtenerPorId(id)
     }
 
-    async obtenerRecetaParaPdf(id) {
-        const receta = await this.obtenerPorId(id)
-        if (!receta) throw new Error(`Receta no encontrada`)
-        return receta
-    }
-
     async agregarReceta(receta) {
         const res = validar(receta)
         if (res.result) {
             const recetaGuardada = await this.#modelo.agregarReceta(receta)
             return recetaGuardada
-        } else {
-            throw new Error(res.error.details[0].message)
+        }else{
+            throw new Error(res.error.details[0].message)         
         }
     }
 
