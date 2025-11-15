@@ -1,5 +1,6 @@
-import PDFDocument from "pdfkit"
+import PDFDocument from "pdfkit";
 
+// Funcion para descargar un pdf
 export function generarPdfReceta(receta, ws) {
     const doc = new PDFDocument({ margin: 50 })
 
