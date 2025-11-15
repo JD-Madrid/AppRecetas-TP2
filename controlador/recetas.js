@@ -1,4 +1,5 @@
 import Servicio from '../servicio/recetas.js'
+import { generarPdfReceta } from '../utils/pdfGenerator.js'
 
 //**
 //*********VALIDACIONES DEL CONTROLADOR******* */
@@ -101,5 +102,6 @@ class Controlador {
         }
     }
 }
+
 
 export default Controlador;
