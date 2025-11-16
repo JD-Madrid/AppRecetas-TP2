@@ -19,9 +19,12 @@ class RouterRecetas {
         router.put("/:id", this.#controlador.editarReceta)
         router.delete("/:id", this.#controlador.eliminarReceta)
 
+        //Descarga de PDF
         router.get("/:id/pdf", this.#controlador.descargarPdf)
         router.post("/:id/enviar", this.#controlador.enviarPdfPorEmail)
 
+        //Envio de PDF por mail
+        
         return router
     }
 }
