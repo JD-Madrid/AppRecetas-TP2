@@ -65,6 +65,23 @@ class Controlador {
         }
     }
 
+    enviarPdfPorEmail = async (req, res) => {
+        try {
+            const { id } = req.params
+            const { destinatario, asunto, mensaje } = req.body
+
+            if (!destinatario) {
+                return res.status(400).json({ error: "Debe indicar un destinatario" })
+            }
+
+            const resultado = await this.#servicio.enviarRecetaPorMail(id, { destinatario, asunto, mensaje })
+            res.json({ mensaje: `Receta enviada a ${resultado.destinatario}`, recetaId: resultado.recetaId })
+        } catch (error) {
+            const status = error.message.includes("no encontrada") ? 404 : 500
+            res.status(status).json({ error: error.message })
+        }
+    }
+
     agregarReceta = async (req, res) => {
         try {
             const receta = req.body

@@ -47,5 +47,19 @@
     "ingredientes": "Tapas de harina, jamon ocino o natural, queso muzzarela o cremoso",
     "instrucciones": "Cocinamos el pollo, volcar sobre las tapas de tarta junto con jamon y queso cortado en pedazos y repulgar, al horno y listo",
     "tiempo": "20"
+  },
+  {
+    "id": 8,
+    "titulo": "Empanadas",
+    "ingredientes": "Carne, Masa",
+    "instrucciones": "Poner la carne dentro de la masa",
+    "tiempo": "20"
+  },
+  {
+    "id": 9,
+    "titulo": "Empanadas",
+    "ingredientes": "Carne, Masa",
+    "instrucciones": "Poner la carne dentro de la masa",
+    "tiempo": "20"
   }
 ]

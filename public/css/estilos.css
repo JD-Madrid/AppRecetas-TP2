@@ -18,6 +18,25 @@ form {
   border-radius: 6px;
 }
 
+.acciones {
+  margin: 40px auto;
+  max-width: 420px;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.campo {
+  margin-top: 15px;
+}
+
+.botones {
+  margin-top: 15px;
+  text-align: right;
+}
+
 label {
   display: block;
   margin-top: 10px;
@@ -32,6 +51,11 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+}
+
+.acciones input,
+.acciones textarea {
+  width: 100%;
 }
 
 button {
@@ -53,4 +77,17 @@ hr {
   width: 60%;
   border: 0;
   border-top: 1px solid #ccc;
+}
+
+#estadoEmail {
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+#estadoEmail.exito {
+  color: #198754;
+}
+
+#estadoEmail.error {
+  color: #c0392b;
 }
