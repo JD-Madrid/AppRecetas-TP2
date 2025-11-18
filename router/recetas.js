@@ -20,6 +20,7 @@ class RouterRecetas {
         router.delete("/:id", this.#controlador.eliminarReceta)
 
         router.get("/:id/pdf", this.#controlador.descargarPdf)
+        router.post("/:id/enviar", this.#controlador.enviarPdfPorEmail)
 
         return router
     }

@@ -1,5 +1,7 @@
 import FabricaModelos from '../modelo/FabricaModelos.js'
 import Config from "../config.js"
+import { generarPdfRecetaBuffer } from "../utils/pdfGenerator.js"
+import { enviarPdfPorMail } from "../utils/emailSender.js"
 
 //Validaciones con Joi
 import { validar } from './validaciones/recetas.js'
@@ -42,6 +44,31 @@ class ServicioReceta {
 
     async eliminarReceta(id) {
         return await this.#modelo.eliminarReceta(id)
+    }
+
+    async enviarRecetaPorMail(id, opcionesEmail = {}) {
+        if (!opcionesEmail.destinatario) {
+            throw new Error("Debe indicar un destinatario")
+        }
+
+        const receta = await this.obtenerRecetaParaPdf(id)
+        const pdfBuffer = await generarPdfRecetaBuffer(receta)
+
+        const asunto = opcionesEmail.asunto || `Receta: ${receta.titulo}`
+        const mensaje = opcionesEmail.mensaje || `Te enviamos la receta "${receta.titulo}".`
+
+        await enviarPdfPorMail({
+            destinatario: opcionesEmail.destinatario,
+            asunto,
+            mensaje,
+            pdfBuffer,
+            nombreArchivo: `receta_${receta.id}.pdf`
+        })
+
+        return {
+            destinatario: opcionesEmail.destinatario,
+            recetaId: receta.id
+        }
     }
 }
 
