@@ -7,6 +7,7 @@ class Server {
     #port = null
     #routerRecetas = null
     #routerClientes = null
+    #server = null
 
     constructor(port) {
         this.#port = port
@@ -28,14 +29,23 @@ class Server {
         app.use("/api/clientes", this.#routerClientes)
 
         /****INICIALIZACION DEL SERVIDOR EXPRESS*****/
-        const server = app.listen(this.#port, () => {
+        this.#server = app.listen(this.#port, () => {
             console.log(`Servidor express escuchando en http://localhost:${this.#port}`)
         })
 
         //Manejo de errores durante la puesta en marcha
-        server.on("error", (error) => {
+        this.#server.on("error", (error) => {
             console.error("❌ Error en el servidor:", error)
         })
+
+        return app
+    }
+
+    stop() {
+        if (this.#server) {
+            this.#server.close()
+            this.#server = null
+        }
     }
 }
 
