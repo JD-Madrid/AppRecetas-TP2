@@ -39,7 +39,10 @@ class Controlador {
         try {
             const { id } = req.params
             const recetas = await this.#servicio.obtenerPorId(id)
-            res.json(recetas)
+            if(!recetas){
+                return res.status(404).json({ error: `Receta con id ${id} no encontrada` })
+            }   //Aca tuve que modificar el servicio para que devuelva null si no encuentra la receta
+            res.json(recetas) // Cuando estaba esto solo, el test fallaba porque no manejaba el caso de no encontrar la receta
         } catch (error) {
             res.status(404).send(error.message)
         }
