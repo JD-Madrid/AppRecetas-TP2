@@ -38,6 +38,8 @@ class Controlador {
     descargarPdf = async (req, res) => {
         try {
             const { id } = req.params
+            console.log("ID recibido en controlador:", req.params.id, "longitud:", req.params.id.length)
+
             const receta = await this.#servicio.obtenerRecetaParaPdf(id)
             if (!receta) {
                 return res.status(404).json({ error: `Receta no encontrada` })
