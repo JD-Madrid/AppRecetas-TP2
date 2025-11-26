@@ -52,47 +52,5 @@
     "nombre": "Valentina",
     "apellido": "Ortiz",
     "mail": "valentina.ortiz@gmail.com"
-  },
-  {
-    "id": 10,
-    "nombre": "Matias",
-    "apellido": "Benitez",
-    "mail": "matias.benitez@gmail.com"
-  },
-  {
-    "id": 11,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
-  },
-  {
-    "id": 12,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
-  },
-  {
-    "id": 13,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
-  },
-  {
-    "id": 14,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
-  },
-  {
-    "id": 15,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
-  },
-  {
-    "id": 16,
-    "nombre": "Cliente Test",
-    "apellido": "Prueba",
-    "mail": "test@mail.com"
   }
 ]

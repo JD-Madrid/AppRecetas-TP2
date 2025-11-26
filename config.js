@@ -1,6 +1,6 @@
 
 const PORT = 8080
-const PERSISTENCIA = "MONGODB" // FILE - MEM - MONGODB
+const PERSISTENCIA = "FILE" // FILE - MEM - MONGODB
 const STRCNX = 'mongodb://localhost:27017'
 const BASE = "mibase"
 

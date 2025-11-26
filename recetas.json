@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "titulo": "Titulo Editado Test",
+    "titulo": "Tarta de Jamon y huevo",
     "ingredientes": "Jamon, Queso, Cebolla, Huevo",
     "instrucciones": "Hacer la cebolla y luego agregarle el jamon, queso y huevo",
     "tiempo": "150"
@@ -57,58 +57,9 @@
   },
   {
     "id": 9,
-    "titulo": "Empanadas",
-    "ingredientes": "Carne, Masa",
-    "instrucciones": "Poner la carne dentro de la masa",
-    "tiempo": "20"
-  },
-  {
-    "id": 10,
-    "titulo": "Pastel de papa",
-    "ingredientes": "Papa, carne picada, cebolla, huevo, morrón, queso",
-    "instrucciones": "Hervir papa, cocinar la carne, las verduras y por último realizar el pastel de papa agregándole queso.",
-    "tiempo": "90"
-  },
-  {
-    "id": 11,
-    "titulo": "Pastel de papa",
-    "ingredientes": "Papa, carne picada, cebolla, huevo, morrón, queso",
-    "instrucciones": "bla bla bla bla bla",
-    "tiempo": "60"
-  },
-  {
-    "id": 12,
-    "titulo": "Receta Test",
-    "ingredientes": "Ingrediente 1, Ingrediente 2",
-    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
-    "tiempo": 45
-  },
-  {
-    "id": 13,
-    "titulo": "Receta Test",
-    "ingredientes": "Ingrediente 1, Ingrediente 2",
-    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
-    "tiempo": 45
-  },
-  {
-    "id": 14,
-    "titulo": "Receta Test",
-    "ingredientes": "Ingrediente 1, Ingrediente 2",
-    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
-    "tiempo": 45
-  },
-  {
-    "id": 15,
-    "titulo": "Receta Test",
-    "ingredientes": "Ingrediente 1, Ingrediente 2",
-    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
-    "tiempo": 45
-  },
-  {
-    "id": 16,
-    "titulo": "Receta Test",
-    "ingredientes": "Ingrediente 1, Ingrediente 2",
-    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
-    "tiempo": 45
+    "titulo": "Salsa ",
+    "ingredientes": "Ajo, perejil, albahaca, tomate triturado, cebolla",
+    "instrucciones": "Hacer la cebolla en aceite de oliva, luego agregar hiervas, luego el tomate y condimentar",
+    "tiempo": "25"
   }
 ]

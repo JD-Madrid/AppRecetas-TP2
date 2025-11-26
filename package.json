@@ -15,11 +15,8 @@
     "chai": "^6.2.1",
     "express": "^5.1.0",
     "joi": "^18.0.1",
-<<<<<<< HEAD
     "mocha": "^11.7.5",
-=======
     "mongodb": "^7.0.0",
->>>>>>> c4e8605 (Conexion con la base de datos mongoDB)
     "nodemailer": "^7.0.10",
     "pdfkit": "^0.17.2",
     "supertest": "^7.1.4"
