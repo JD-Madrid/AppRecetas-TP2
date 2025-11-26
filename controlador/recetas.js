@@ -7,7 +7,7 @@ import { generarPdfReceta } from '../utils/pdfGenerator.js'
 // */
 
 class Controlador {
-    #servicio= null
+    #servicio = null
 
     constructor() {
         this.#servicio = new Servicio()
@@ -31,7 +31,7 @@ class Controlador {
             }   //Aca tuve que modificar el servicio para que devuelva null si no encuentra la receta
             res.json(recetas) // Cuando estaba esto solo, el test fallaba porque no manejaba el caso de no encontrar la receta
         } catch (error) {
-            res.status(404).json({error: error.message})
+            res.status(404).json({ error: error.message })
         }
     }
 
@@ -87,7 +87,8 @@ class Controlador {
 
     editarReceta = async (req, res) => {
         try {
-            const id = parseInt(req.params.id)
+            // const id = parseInt(req.params.id) //Me rompia con el ObjectId de MONGODB
+            const id = req.params.id
             const data = req.body
             const recetaActualizada = await this.#servicio.editarReceta(id, data)
             if (!recetaActualizada) return res.status(404).json({ error: 'No se encontró la receta' })
@@ -99,7 +100,8 @@ class Controlador {
 
     eliminarReceta = async (req, res) => {
         try {
-            const id = parseInt(req.params.id)
+            // const id = parseInt(req.params.id) //Me rompia con el ObjectId de MONGODB
+            const id = req.params.id
             const recetaEliminada = await this.#servicio.eliminarReceta(id)
             if (!recetaEliminada) return res.status(404).json({ error: 'No se encontró la receta' })
             res.json({ mensaje: 'Receta eliminada correctamente', recetaEliminada: recetaEliminada })

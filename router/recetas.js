@@ -22,8 +22,6 @@ class RouterRecetas {
         //Descarga de PDF
         router.get("/:id/pdf", this.#controlador.descargarPdf)
         router.post("/:id/enviar", this.#controlador.enviarPdfPorEmail)
-
-        //Envio de PDF por mail
         
         return router
     }

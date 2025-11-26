@@ -1,6 +1,8 @@
 
 const PORT = 8080
-const PERSISTENCIA = "FILE" // FILE - MEM - MONGODB
+const PERSISTENCIA = "MONGODB" // FILE - MEM - MONGODB
+const STRCNX = 'mongodb://localhost:27017'
+const BASE = "mibase"
 
 const SMTP = {
     HOST: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -14,5 +16,7 @@ const SMTP = {
 export default {
     PORT,
     PERSISTENCIA,
-    SMTP
+    SMTP, 
+    STRCNX,
+    BASE
 }

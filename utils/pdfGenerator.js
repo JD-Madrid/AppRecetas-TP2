@@ -38,3 +38,17 @@ export function generarPdfReceta(receta, ws) {
     //Finalizar PDF
     doc.end();
 }
+
+export function generarPdfRecetaBuffer(receta) {
+    return new Promise((resolve, reject) => {
+        const doc = new PDFDocument({ margin: 50 })
+        const chunks = []
+
+        doc.on("data", (chunk) => chunks.push(chunk))
+        doc.on("end", () => resolve(Buffer.concat(chunks)))
+        doc.on("error", (err) => reject(err))
+
+        escribirContenidoReceta(doc, receta)
+        doc.end()
+    })
+}
