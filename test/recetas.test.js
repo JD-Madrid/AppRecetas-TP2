@@ -18,7 +18,7 @@ describe("TEST API Recetas (interno)", () => {
         // Obtener un ID existente para pruebas
         const data = JSON.parse(fs.readFileSync("./recetas.json", "utf-8"))
         if (data.length > 0) {
-            idExistente = data[0].id
+            idExistente = data[0].id 
         }
     })
 

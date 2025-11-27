@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nombre": "Jose",
+    "nombre": "Nombre Editado",
     "apellido": "Madrid",
     "mail": "josedavidmadrid2000@gmail.com"
   },
@@ -52,5 +52,23 @@
     "nombre": "Valentina",
     "apellido": "Ortiz",
     "mail": "valentina.ortiz@gmail.com"
+  },
+  {
+    "id": 10,
+    "nombre": "Cliente Test",
+    "apellido": "Prueba",
+    "mail": "test@mail.com"
+  },
+  {
+    "id": 11,
+    "nombre": "Cliente Test",
+    "apellido": "Prueba",
+    "mail": "test@mail.com"
+  },
+  {
+    "id": 12,
+    "nombre": "Cliente Test",
+    "apellido": "Prueba",
+    "mail": "test@mail.com"
   }
 ]

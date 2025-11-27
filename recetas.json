@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "titulo": "Tarta de Jamon y huevo",
+    "titulo": "Titulo Editado Test",
     "ingredientes": "Jamon, Queso, Cebolla, Huevo",
     "instrucciones": "Hacer la cebolla y luego agregarle el jamon, queso y huevo",
     "tiempo": "150"
@@ -57,9 +57,16 @@
   },
   {
     "id": 9,
-    "titulo": "Salsa ",
-    "ingredientes": "Ajo, perejil, albahaca, tomate triturado, cebolla",
-    "instrucciones": "Hacer la cebolla en aceite de oliva, luego agregar hiervas, luego el tomate y condimentar",
-    "tiempo": "25"
+    "titulo": "Receta Test",
+    "ingredientes": "Ingrediente 1, Ingrediente 2",
+    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
+    "tiempo": 45
+  },
+  {
+    "id": 10,
+    "titulo": "Receta Test",
+    "ingredientes": "Ingrediente 1, Ingrediente 2",
+    "instrucciones": "Mezclar todo y cocinar por 10 minutos",
+    "tiempo": 45
   }
 ]
