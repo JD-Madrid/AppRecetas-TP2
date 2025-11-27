@@ -19,10 +19,21 @@ export async function enviarPdfPorMail({ destinatario, asunto, mensaje, pdfBuffe
     const SMTP = validarConfiguracionSMTP()
 
     const transporter = nodemailer.createTransport({
-        host: SMTP.HOST,
-        port: SMTP.PORT,
-        secure: SMTP.SECURE,
-        auth: { user: SMTP.USER, pass: SMTP.PASS }
+        // host: SMTP.HOST,
+        // port: SMTP.PORT,
+        // secure: SMTP.SECURE,
+        // auth: { user: SMTP.USER, pass: SMTP.PASS }
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false, // obligatorio con 587
+        auth: {
+            user: SMTP.USER,
+            pass: SMTP.PASS
+        },
+        tls: {
+            ciphers: "SSLv3",
+            rejectUnauthorized: false  // evita el self-signed error en Windows
+        }
     })
 
     try {

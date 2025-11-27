@@ -12,7 +12,7 @@ class FabricaModelos {
         if (!Modelo) {
             throw new Error(`Entidad ${entidad} no existe para ${tipoPersistencia}`)
         }
-
+        console.log(`**Instanciando modelo '${entidad}' usando persistencia: ${tipoPersistencia}`);
         return new Modelo()
     }
 }

@@ -13,19 +13,6 @@ class Controlador {
         this.#servicio = new Servicio()
     }
 
-    //**
-    //Sí, la diferencia entre que funcione y no funcione es que una es arrow function y la otra no.
-    //La arrow mantiene el this. La función normal lo pierde al pasarla como callback del router.
-    //async obtenerTodas(req, res) {
-    //     try {
-    //         const recetas = await this.#servicio.obtenerTodas()
-    //         res.json(recetas)
-    //     } catch (error) {
-    //         res.status(500).json({error:` Al querer leer todas las recetas ${error.message}` })
-    //     }
-    // }
-    // */
-
     obtenerTodas = async (req, res) => {
         try {
             const recetas = await this.#servicio.obtenerTodas()
@@ -44,13 +31,15 @@ class Controlador {
             }   //Aca tuve que modificar el servicio para que devuelva null si no encuentra la receta
             res.json(recetas) // Cuando estaba esto solo, el test fallaba porque no manejaba el caso de no encontrar la receta
         } catch (error) {
-            res.status(404).send(error.message)
+            res.status(404).json({ error: error.message })
         }
     }
 
     descargarPdf = async (req, res) => {
         try {
             const { id } = req.params
+            console.log("ID recibido en controlador:", req.params.id, "longitud:", req.params.id.length)
+
             const receta = await this.#servicio.obtenerRecetaParaPdf(id)
             if (!receta) {
                 return res.status(404).json({ error: `Receta no encontrada` })
@@ -100,7 +89,8 @@ class Controlador {
 
     editarReceta = async (req, res) => {
         try {
-            const id = parseInt(req.params.id)
+            // const id = parseInt(req.params.id) //Me rompia con el ObjectId de MONGODB
+            const id = req.params.id
             const data = req.body
             const recetaActualizada = await this.#servicio.editarReceta(id, data)
             if (!recetaActualizada) return res.status(404).json({ error: 'No se encontró la receta' })
@@ -112,7 +102,8 @@ class Controlador {
 
     eliminarReceta = async (req, res) => {
         try {
-            const id = parseInt(req.params.id)
+            // const id = parseInt(req.params.id) //Me rompia con el ObjectId de MONGODB
+            const id = req.params.id
             const recetaEliminada = await this.#servicio.eliminarReceta(id)
             if (!recetaEliminada) return res.status(404).json({ error: 'No se encontró la receta' })
             res.json({ mensaje: 'Receta eliminada correctamente', recetaEliminada: recetaEliminada })
